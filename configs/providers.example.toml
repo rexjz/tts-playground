@@ -1,0 +1,21 @@
+[providers.dry_run]
+enabled = true
+
+[providers.volcengine_seed_tts]
+enabled = false
+api_key_env = "VOLCENGINE_API_KEY"
+app_id_env = "VOLCENGINE_APP_ID"
+
+[providers.dashscope_cosyvoice]
+enabled = false
+api_key_env = "DASHSCOPE_API_KEY"
+
+[providers.minimax_speech]
+enabled = false
+api_key_env = "MINIMAX_API_KEY"
+group_id_env = "MINIMAX_GROUP_ID"
+
+[providers.tencent_tts]
+enabled = false
+secret_id_env = "TENCENTCLOUD_SECRET_ID"
+secret_key_env = "TENCENTCLOUD_SECRET_KEY"

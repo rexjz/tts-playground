@@ -1,0 +1,282 @@
+[
+  {
+    "id": "eb1f4d88-314f-41ef-8756-dd7cd39b8d3e",
+    "dwdId": "5c18666e-4c97-4d2e-91f9-2f2c5f33fefd",
+    "title": "Engineering Superconductivity with Moiré Patterns: A New Quantum Frontier",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/5c18666e-4c97-4d2e-91f9-2f2c5f33fefd/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T03:30:38.824Z",
+    "file": "en/eb1f4d88-314f-41ef-8756-dd7cd39b8d3e.json"
+  },
+  {
+    "id": "ba361975-060f-45d3-aca7-f00c15700e63",
+    "dwdId": "dd980bb0-174a-4f5b-a334-f121a441bd8f",
+    "title": "Topological Insulators: Building the Unbreakable Quantum Computer",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/dd980bb0-174a-4f5b-a334-f121a441bd8f/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T03:25:12.815Z",
+    "file": "en/ba361975-060f-45d3-aca7-f00c15700e63.json"
+  },
+  {
+    "id": "34dac13b-b795-42cb-99d3-a9f543f95d8e",
+    "dwdId": "24111708-6bba-4ab3-beca-ba5aa2e6fca4",
+    "title": "Engineering Quantum Gaps: Electrically Tuning Metal-Insulator Transitions in Nanotubes",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/24111708-6bba-4ab3-beca-ba5aa2e6fca4/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T03:18:09.034Z",
+    "file": "en/34dac13b-b795-42cb-99d3-a9f543f95d8e.json"
+  },
+  {
+    "id": "dcac1088-ca12-41b5-a616-891c8032999b",
+    "dwdId": "00b43ef0-25cd-4bcd-8393-e3ed2888f002",
+    "title": "Cracking the Code: How Software Engineering Supercharges Quantum Error Correction",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/00b43ef0-25cd-4bcd-8393-e3ed2888f002/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T03:12:05.503Z",
+    "file": "en/dcac1088-ca12-41b5-a616-891c8032999b.json"
+  },
+  {
+    "id": "6c884ec5-64aa-4be4-950d-59dc0784da67",
+    "dwdId": "fdf572c8-b18e-4de0-8db5-ea5fada4c62b",
+    "title": "Quantum Leap in Image Transmission: Adaptive Error Correction Breakthrough",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/fdf572c8-b18e-4de0-8db5-ea5fada4c62b/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T03:05:29.656Z",
+    "file": "en/6c884ec5-64aa-4be4-950d-59dc0784da67.json"
+  },
+  {
+    "id": "7cf8d1f9-152d-485a-8307-a01b59b9a677",
+    "dwdId": "48ebfbd4-edf2-4a1a-8532-6320b16108c6",
+    "title": "Pinball: Cracking the Code on Quantum Error Correction at Cryogenic Temperatures",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/48ebfbd4-edf2-4a1a-8532-6320b16108c6/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T02:59:29.272Z",
+    "file": "en/7cf8d1f9-152d-485a-8307-a01b59b9a677.json"
+  },
+  {
+    "id": "24b2138c-f3d6-4b35-b0f8-ce3860476697",
+    "dwdId": "e4fd5868-71a0-4897-8c90-fc5ae64af06d",
+    "title": "Quantum Error Correction: The Secret Weapon for Ultra-Secure 6G Networks",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/e4fd5868-71a0-4897-8c90-fc5ae64af06d/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T02:54:11.836Z",
+    "file": "en/24b2138c-f3d6-4b35-b0f8-ce3860476697.json"
+  },
+  {
+    "id": "0da8c423-88a9-40d9-8a72-e82a263e45d3",
+    "dwdId": "b8992ce9-81c5-42f7-b828-087931fbb754",
+    "title": "Can We Fix Quantum Errors Without Breaking the Bank? NISQ's QEC Challenge",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/b8992ce9-81c5-42f7-b828-087931fbb754/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T02:48:22.311Z",
+    "file": "en/0da8c423-88a9-40d9-8a72-e82a263e45d3.json"
+  },
+  {
+    "id": "a595d8df-723d-4653-a249-922b8123d5a0",
+    "dwdId": "1a277bae-ef79-4667-8500-de851dc7a20d",
+    "title": "Detecting Spacetime's Permanent Memory: LISA's Quest to Observe Gravitational Wave Displacement",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/1a277bae-ef79-4667-8500-de851dc7a20d/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T02:43:10.715Z",
+    "file": "en/a595d8df-723d-4653-a249-922b8123d5a0.json"
+  },
+  {
+    "id": "5ddc5d64-f48e-4aa0-a966-1f2f12c10962",
+    "dwdId": "8fc35280-c160-4a20-bfbc-a8b390ba3f79",
+    "title": "Mapping the Cosmic Rumble: The Quest for Anisotropy in Gravitational Waves",
+    "podcastLanguage": "en",
+    "characterIds": [
+      "en-ProfessorLi",
+      "en-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/8fc35280-c160-4a20-bfbc-a8b390ba3f79/en.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T02:36:41.116Z",
+    "file": "en/5ddc5d64-f48e-4aa0-a966-1f2f12c10962.json"
+  },
+  {
+    "id": "b2390750-af62-4234-b30d-c19726d40a10",
+    "dwdId": "f1e4ab51-611d-41ef-84cf-77c9895cd4f0",
+    "title": "d波超导体中的浮动马约拉纳边缘态：一种新型拓扑量子现象",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/f1e4ab51-611d-41ef-84cf-77c9895cd4f0/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T05:47:42.067Z",
+    "file": "zh-CN/b2390750-af62-4234-b30d-c19726d40a10.json"
+  },
+  {
+    "id": "92df8531-3597-4e59-bacd-e9a558150bc8",
+    "dwdId": "cf589918-0e84-40ab-9e4f-2780b841ec00",
+    "title": "超薄氮化钛超导体：拓扑绝缘体如何逆向增强超导性",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/cf589918-0e84-40ab-9e4f-2780b841ec00/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T05:40:27.702Z",
+    "file": "zh-CN/92df8531-3597-4e59-bacd-e9a558150bc8.json"
+  },
+  {
+    "id": "25a22b94-92e5-4e75-9815-b440e208bbdc",
+    "dwdId": "5c18666e-4c97-4d2e-91f9-2f2c5f33fefd",
+    "title": "超导配对密度调制：从摩尔晶格到量子材料设计",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/5c18666e-4c97-4d2e-91f9-2f2c5f33fefd/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T05:29:04.749Z",
+    "file": "zh-CN/25a22b94-92e5-4e75-9815-b440e208bbdc.json"
+  },
+  {
+    "id": "29660d17-e8f1-4fb2-b74d-aa2f9fa3751a",
+    "dwdId": "dd980bb0-174a-4f5b-a334-f121a441bd8f",
+    "title": "拓扑绝缘体:通向容错量子计算的新路径",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/dd980bb0-174a-4f5b-a334-f121a441bd8f/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T05:23:08.559Z",
+    "file": "zh-CN/29660d17-e8f1-4fb2-b74d-aa2f9fa3751a.json"
+  },
+  {
+    "id": "5e67c6c6-6ba4-44e5-ab0d-45cefe847313",
+    "dwdId": "24111708-6bba-4ab3-beca-ba5aa2e6fca4",
+    "title": "用电场",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/24111708-6bba-4ab3-beca-ba5aa2e6fca4/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T05:18:03.307Z",
+    "file": "zh-CN/5e67c6c6-6ba4-44e5-ab0d-45cefe847313.json"
+  },
+  {
+    "id": "d53c3847-20aa-4353-83b4-56674e227951",
+    "dwdId": "00b43ef0-25cd-4bcd-8393-e3ed2888f002",
+    "title": "量子纠错解码器提速：Tesseract如何实现5倍性能飞跃",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/00b43ef0-25cd-4bcd-8393-e3ed2888f002/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T05:12:38.929Z",
+    "file": "zh-CN/d53c3847-20aa-4353-83b4-56674e227951.json"
+  },
+  {
+    "id": "fe6653c5-ff83-4cea-bf1b-dce793aafdf7",
+    "dwdId": "fdf572c8-b18e-4de0-8db5-ea5fada4c62b",
+    "title": "量子图像传输的自适应纠错：未来通信的突破",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/fdf572c8-b18e-4de0-8db5-ea5fada4c62b/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T05:07:00.003Z",
+    "file": "zh-CN/fe6653c5-ff83-4cea-bf1b-dce793aafdf7.json"
+  },
+  {
+    "id": "e4eb3d9e-8514-4c2a-936a-c850e831aa4e",
+    "dwdId": "48ebfbd4-edf2-4a1a-8532-6320b16108c6",
+    "title": "量子纠错的冷冻守门人:Pinball预解码器如何突破百万量子比特瓶颈",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/48ebfbd4-edf2-4a1a-8532-6320b16108c6/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T04:57:15.979Z",
+    "file": "zh-CN/e4eb3d9e-8514-4c2a-936a-c850e831aa4e.json"
+  },
+  {
+    "id": "aae39dd4-34f1-4d0f-a032-3c9beacdbd22",
+    "dwdId": "e4fd5868-71a0-4897-8c90-fc5ae64af06d",
+    "title": "6G量子通信：如何用纠错技术保护脆弱的量子态",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/e4fd5868-71a0-4897-8c90-fc5ae64af06d/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T04:51:51.258Z",
+    "file": "zh-CN/aae39dd4-34f1-4d0f-a032-3c9beacdbd22.json"
+  },
+  {
+    "id": "7574fdb5-6749-4b74-aa33-f3064e89aebe",
+    "dwdId": "b8992ce9-81c5-42f7-b828-087931fbb754",
+    "title": "量子纠错在NISQ时代的困境与突破",
+    "podcastLanguage": "zh-CN",
+    "characterIds": [
+      "zh-ProfessorLi",
+      "zh-ScienceCommunicator"
+    ],
+    "scriptStorageKey": "paper-podcasts/b8992ce9-81c5-42f7-b828-087931fbb754/zh-CN.script.json",
+    "durationSeconds": null,
+    "generatedAt": "2026-05-02T04:46:55.758Z",
+    "file": "zh-CN/7574fdb5-6749-4b74-aa33-f3064e89aebe.json"
+  }
+]

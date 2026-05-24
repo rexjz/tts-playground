@@ -1,0 +1,46 @@
+{
+  "title": "Pinball: Cracking the Code on Quantum Error Correction at Cryogenic Temperatures",
+  "abstract": "Researchers introduce Pinball, a breakthrough cryogenic predecoder that solves critical challenges in scaling quantum computers. By processing quantum errors directly at 4K temperatures using specialized CMOS circuits, it dramatically reduces data bandwidth and power consumption while achieving error rates six orders of magnitude better than previous systems.",
+  "discussionSentences": [
+    {
+      "speakerName": "Science Communicator",
+      "content": "Imagine building a quantum computer with millions of qubits, but there's a catch: every qubit constantly makes errors. The Pinball system tackles this by catching errors right where they happen, at ultra-cold temperatures, before they flood the system.",
+      "ttsInstructions": "Engaging tone with curiosity, pause after 'catch', emphasize 'right where they happen', moderate pace"
+    },
+    {
+      "speakerName": "Professor Li",
+      "content": "The core innovation is processing errors at 4 Kelvin instead of room temperature. Traditional systems send massive amounts of error data from cryogenic qubits to room-temperature decoders, creating a bandwidth bottleneck. Pinball filters this at the source using lightweight cryogenic CMOS logic.",
+      "ttsInstructions": "Authoritative and precise, stress '4 Kelvin' and 'at the source', steady controlled pace"
+    },
+    {
+      "speakerName": "Science Communicator",
+      "content": "Think of it like having a smart filter in your freezer instead of sending everything to your kitchen computer. Previous attempts used simplified error models, but Pinball accounts for realistic circuit-level noise, capturing how errors actually propagate through quantum circuits.",
+      "ttsInstructions": "Friendly analogy tone, pause after 'kitchen computer', emphasize 'realistic', slightly faster"
+    },
+    {
+      "speakerName": "Professor Li",
+      "content": "Previous cryogenic predecoders only handled basic error patterns. Pinball models the full quantum error correction circuit, tracking how measurement errors compound through stabilizer operations. This circuit-aware approach improves logical error rates by six orders of magnitude over prior cryogenic designs.",
+      "ttsInstructions": "Building intensity, stress 'six orders of magnitude', deliberate pace with confidence"
+    },
+    {
+      "speakerName": "Science Communicator",
+      "content": "Six orders of magnitude means a million times better. Even compared to room-temperature systems with more resources, Pinball achieves 32 times lower error rates while using a fraction of the power, just half a milliwatt at peak.",
+      "ttsInstructions": "Excited revelation, emphasize 'million times' and 'half a milliwatt', energetic pace"
+    },
+    {
+      "speakerName": "Professor Li",
+      "content": "The architecture employs a two-stage pipeline: first, a detector identifies sparse error patterns using syndrome correlations; second, a predictor applies learned corrections. The system dynamically scales voltage and frequency, reducing typical power by 22 times through adaptive body biasing in 22-nanometer FDSOI technology.",
+      "ttsInstructions": "Technical explanation mode, clear pauses between stages, stress numbers, measured pace"
+    },
+    {
+      "speakerName": "Science Communicator",
+      "content": "Here's the payoff: with just 1.5 watts of cooling budget at 4K, Pinball can support over 2,600 logical qubits at distance 21, which means strong error protection. It also compresses syndrome data by up to 3,780 times, drastically cutting the communication load.",
+      "ttsInstructions": "Revealing results with enthusiasm, pause after 'payoff', emphasize huge numbers, upbeat"
+    },
+    {
+      "speakerName": "Professor Li",
+      "content": "This represents essential progress toward practical fault-tolerant quantum computing. By co-designing the algorithm with cryogenic technology constraints, Pinball demonstrates that intelligent preprocessing at low temperatures can overcome fundamental scaling barriers in quantum error correction architectures.",
+      "ttsInstructions": "Concluding with authority and optimism, stress 'essential progress' and 'overcome', slower wrap-up pace"
+    }
+  ]
+}

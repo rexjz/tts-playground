@@ -1,0 +1,43 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Test, lint, type-check, and coverage caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Benchmark outputs and generated media
+outputs/*
+!outputs/.gitignore
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
