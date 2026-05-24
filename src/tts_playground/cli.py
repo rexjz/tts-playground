@@ -48,6 +48,12 @@ def _build_parser() -> argparse.ArgumentParser:
         default=None,
         type=Path,
     )
+    plan_parser.add_argument(
+        "--concat-method",
+        default="auto",
+        choices=("auto", "ffmpeg", "binary", "none"),
+        help="How to concatenate utterance audio into a podcast file.",
+    )
 
     return parser
 
@@ -66,6 +72,7 @@ def _plan(args: argparse.Namespace) -> int:
         language=args.language,
         provider=provider,
         limit=args.limit,
+        concat_method=args.concat_method,
     )
     print(
         "Planned "

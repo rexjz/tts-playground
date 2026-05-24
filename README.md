@@ -31,6 +31,19 @@ The generated files include:
 - `manifest.json`: run summary for the selected provider and language
 - `<script-id>/script.json`: one task for the whole script
 - `<script-id>/utterances/<turn-index>.json`: one task per dialogue sentence
+- `<script-id>/audio/<turn-index>-<provider>.mp3`: one audio file per sentence
+- `<script-id>/podcast/<script-id>-<provider>.mp3`: concatenated podcast audio
+
+By default, provider audio is concatenated after all utterances in a script
+finish. If `ffmpeg` is available, it is used for stream-copy concatenation. If
+not, MP3 output falls back to an internal binary concatenation path that removes
+extra ID3 headers from later segments.
+
+To skip podcast concatenation:
+
+```bash
+uv run tts_playground plan --provider volcengine_seed_tts --language zh-CN --limit 1 --concat-method none
+```
 
 ## Providers
 

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from tts_playground.audio import concatenate_audio
 from tts_playground.providers.base import Provider, SynthesisRequest
 from tts_playground.scripts import BenchmarkScript, iter_scripts
 
@@ -15,6 +16,7 @@ def write_plan(
     language: str,
     provider: Provider,
     limit: int | None = None,
+    concat_method: str = "auto",
 ) -> dict[str, Any]:
     scripts = iter_scripts(scripts_dir, language=language, limit=limit)
     language_out_dir = out_dir / language
@@ -22,6 +24,7 @@ def write_plan(
 
     manifest_scripts: list[dict[str, Any]] = []
     utterance_count = 0
+    podcast_count = 0
     audio_file_extension = provider.audio_file_extension
 
     for script in scripts:
@@ -30,12 +33,23 @@ def write_plan(
         script_dir.mkdir(parents=True, exist_ok=True)
 
         script_task_path = script_dir / "script.json"
+        podcast_audio_path = (
+            script_dir
+            / "podcast"
+            / f"{script.id}-{provider.id}.{audio_file_extension}"
+        )
         _write_json(
             script_task_path,
-            _build_script_task(script, provider.id, speaker_slots),
+            _build_script_task(
+                script,
+                provider.id,
+                speaker_slots,
+                podcast_audio_path=podcast_audio_path,
+            ),
         )
 
         utterance_paths: list[str] = []
+        audio_paths: list[Path] = []
         for turn_index, turn in enumerate(script.discussion_sentences, start=1):
             utterance_path = script_dir / "utterances" / f"{turn_index:04d}.json"
             suggested_audio_path = (
@@ -59,9 +73,45 @@ def write_plan(
                     "speaker_slot": speaker_slots[turn.speaker_name],
                 },
             )
-            provider.synthesize(request, output_path=utterance_path)
+            result = provider.synthesize(request, output_path=utterance_path)
             utterance_paths.append(utterance_path.as_posix())
+            if result.audio_path:
+                audio_paths.append(Path(result.audio_path))
             utterance_count += 1
+
+        podcast_audio: dict[str, Any] = {
+            "status": "not_available",
+            "path": None,
+            "method": None,
+            "input_count": 0,
+        }
+        if audio_paths:
+            if len(audio_paths) != len(script.discussion_sentences):
+                raise ValueError(
+                    f"Script {script.id} produced partial audio output; "
+                    "cannot concatenate podcast audio"
+                )
+            if concat_method != "none":
+                concat_result = concatenate_audio(
+                    audio_paths,
+                    output_path=podcast_audio_path,
+                    audio_file_extension=audio_file_extension,
+                    method=concat_method,
+                )
+                podcast_audio = {
+                    "status": "synthesized",
+                    "path": concat_result.output_path,
+                    "method": concat_result.method,
+                    "input_count": concat_result.input_count,
+                }
+                podcast_count += 1
+            else:
+                podcast_audio = {
+                    "status": "skipped",
+                    "path": None,
+                    "method": "none",
+                    "input_count": len(audio_paths),
+                }
 
         manifest_scripts.append(
             {
@@ -72,6 +122,8 @@ def write_plan(
                 "script_task_path": script_task_path.as_posix(),
                 "utterance_count": len(script.discussion_sentences),
                 "utterance_paths": utterance_paths,
+                "audio_paths": [path.as_posix() for path in audio_paths],
+                "podcast_audio": podcast_audio,
                 "speaker_slots": speaker_slots,
             }
         )
@@ -83,6 +135,8 @@ def write_plan(
         "output_dir": language_out_dir.as_posix(),
         "script_count": len(scripts),
         "utterance_count": utterance_count,
+        "podcast_count": podcast_count,
+        "concat_method": concat_method,
         "scripts": manifest_scripts,
     }
     _write_json(language_out_dir / "manifest.json", manifest)
@@ -93,6 +147,7 @@ def _build_script_task(
     script: BenchmarkScript,
     provider_id: str,
     speaker_slots: dict[str, str],
+    podcast_audio_path: Path,
 ) -> dict[str, Any]:
     return {
         "kind": "script",
@@ -108,6 +163,7 @@ def _build_script_task(
         "generated_at": script.generated_at,
         "source_file": script.source_file,
         "speaker_slots": speaker_slots,
+        "podcast_audio_path": podcast_audio_path.as_posix(),
         "dialogue": [
             {
                 "turn_index": index,
