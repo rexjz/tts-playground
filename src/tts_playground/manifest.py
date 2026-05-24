@@ -22,25 +22,33 @@ def write_plan(
 
     manifest_scripts: list[dict[str, Any]] = []
     utterance_count = 0
+    audio_file_extension = provider.audio_file_extension
 
     for script in scripts:
+        speaker_slots = _assign_speaker_slots(script)
         script_dir = language_out_dir / script.id
         script_dir.mkdir(parents=True, exist_ok=True)
 
         script_task_path = script_dir / "script.json"
-        _write_json(script_task_path, _build_script_task(script, provider.id))
+        _write_json(
+            script_task_path,
+            _build_script_task(script, provider.id, speaker_slots),
+        )
 
         utterance_paths: list[str] = []
         for turn_index, turn in enumerate(script.discussion_sentences, start=1):
             utterance_path = script_dir / "utterances" / f"{turn_index:04d}.json"
             suggested_audio_path = (
-                script_dir / "audio" / f"{turn_index:04d}-{provider.id}.mp3"
+                script_dir
+                / "audio"
+                / f"{turn_index:04d}-{provider.id}.{audio_file_extension}"
             )
             request = SynthesisRequest(
                 provider_id=provider.id,
                 language=script.podcast_language,
                 script_id=script.id,
                 turn_index=turn_index,
+                speaker_slot=speaker_slots[turn.speaker_name],
                 speaker_name=turn.speaker_name,
                 text=turn.content,
                 tts_instructions=turn.tts_instructions,
@@ -48,6 +56,7 @@ def write_plan(
                 metadata={
                     "title": script.title,
                     "source_file": script.source_file,
+                    "speaker_slot": speaker_slots[turn.speaker_name],
                 },
             )
             provider.synthesize(request, output_path=utterance_path)
@@ -63,6 +72,7 @@ def write_plan(
                 "script_task_path": script_task_path.as_posix(),
                 "utterance_count": len(script.discussion_sentences),
                 "utterance_paths": utterance_paths,
+                "speaker_slots": speaker_slots,
             }
         )
 
@@ -79,7 +89,11 @@ def write_plan(
     return manifest
 
 
-def _build_script_task(script: BenchmarkScript, provider_id: str) -> dict[str, Any]:
+def _build_script_task(
+    script: BenchmarkScript,
+    provider_id: str,
+    speaker_slots: dict[str, str],
+) -> dict[str, Any]:
     return {
         "kind": "script",
         "status": "planned",
@@ -93,9 +107,11 @@ def _build_script_task(script: BenchmarkScript, provider_id: str) -> dict[str, A
         "script_storage_key": script.script_storage_key,
         "generated_at": script.generated_at,
         "source_file": script.source_file,
+        "speaker_slots": speaker_slots,
         "dialogue": [
             {
                 "turn_index": index,
+                "speaker_slot": speaker_slots[turn.speaker_name],
                 "speaker_name": turn.speaker_name,
                 "content": turn.content,
                 "tts_instructions": turn.tts_instructions,
@@ -103,6 +119,21 @@ def _build_script_task(script: BenchmarkScript, provider_id: str) -> dict[str, A
             for index, turn in enumerate(script.discussion_sentences, start=1)
         ],
     }
+
+
+def _assign_speaker_slots(script: BenchmarkScript) -> dict[str, str]:
+    slots = ("speaker1", "speaker2")
+    speaker_slots: dict[str, str] = {}
+    for turn in script.discussion_sentences:
+        if turn.speaker_name in speaker_slots:
+            continue
+        if len(speaker_slots) >= len(slots):
+            raise ValueError(
+                f"Script {script.id} has more than two speakers; "
+                "speaker-slot assignment only supports speaker1 and speaker2"
+            )
+        speaker_slots[turn.speaker_name] = slots[len(speaker_slots)]
+    return speaker_slots
 
 
 def _write_json(path: Path, payload: dict[str, Any]) -> None:

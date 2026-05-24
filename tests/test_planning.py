@@ -72,8 +72,11 @@ class PlanningTests(unittest.TestCase):
                 utterance_payload = json.load(file)
 
             self.assertEqual("script", script_payload["kind"])
+            self.assertEqual("speaker1", script_payload["dialogue"][0]["speaker_slot"])
+            self.assertIn("speaker_slots", script_payload)
             self.assertEqual("utterance", utterance_payload["kind"])
             self.assertEqual("planned", utterance_payload["status"])
+            self.assertEqual("speaker1", utterance_payload["request"]["speaker_slot"])
             self.assertIsNone(utterance_payload.get("audio_path"))
             self.assertIn(
                 "/audio/0001-dry_run.mp3",
