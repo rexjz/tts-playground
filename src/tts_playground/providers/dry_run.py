@@ -8,6 +8,7 @@ from tts_playground.providers.base import SynthesisRequest, SynthesisResult
 
 class DryRunProvider:
     id = "dry_run"
+    audio_file_extension = "mp3"
 
     def synthesize(
         self,

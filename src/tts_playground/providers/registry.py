@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from tts_playground.providers.base import Provider
 from tts_playground.providers.dry_run import DryRunProvider
+from tts_playground.providers.tencent import TencentTtsProvider
+from tts_playground.providers.volcengine import VolcengineSeedTtsProvider
 
 RESERVED_PROVIDER_IDS = (
     "dry_run",
@@ -19,6 +21,10 @@ def list_provider_ids() -> tuple[str, ...]:
 def get_provider(provider_id: str) -> Provider:
     if provider_id == DryRunProvider.id:
         return DryRunProvider()
+    if provider_id == VolcengineSeedTtsProvider.id:
+        return VolcengineSeedTtsProvider()
+    if provider_id == TencentTtsProvider.id:
+        return TencentTtsProvider()
     if provider_id in RESERVED_PROVIDER_IDS:
         raise NotImplementedError(
             f"Provider {provider_id!r} is reserved but not implemented yet. "

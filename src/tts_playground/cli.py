@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Sequence
 
 from tts_playground.manifest import write_plan
+from tts_playground.providers.base import ProviderError
 from tts_playground.providers.registry import get_provider, list_provider_ids
 
 
@@ -28,7 +29,7 @@ def _build_parser() -> argparse.ArgumentParser:
 
     plan_parser = subparsers.add_parser(
         "plan",
-        help="Generate a dry-run benchmark manifest and task files.",
+        help="Generate benchmark manifest, task files, and provider outputs.",
     )
     plan_parser.add_argument("--language", default="zh-CN")
     plan_parser.add_argument(
@@ -44,8 +45,14 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     plan_parser.add_argument(
         "--out",
-        default=Path("outputs/dry-run"),
+        default=None,
         type=Path,
+    )
+    plan_parser.add_argument(
+        "--concat-method",
+        default="auto",
+        choices=("auto", "ffmpeg", "binary", "none"),
+        help="How to concatenate utterance audio into a podcast file.",
     )
 
     return parser
@@ -54,16 +61,18 @@ def _build_parser() -> argparse.ArgumentParser:
 def _plan(args: argparse.Namespace) -> int:
     try:
         provider = get_provider(args.provider)
-    except (NotImplementedError, ValueError) as exc:
+    except (NotImplementedError, ValueError, ProviderError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 
+    out_dir = args.out or _default_out_dir(provider.id)
     manifest = write_plan(
         scripts_dir=args.scripts_dir,
-        out_dir=args.out,
+        out_dir=out_dir,
         language=args.language,
         provider=provider,
         limit=args.limit,
+        concat_method=args.concat_method,
     )
     print(
         "Planned "
@@ -79,3 +88,9 @@ def _positive_int(raw: str) -> int:
     if value < 1:
         raise argparse.ArgumentTypeError("value must be >= 1")
     return value
+
+
+def _default_out_dir(provider_id: str) -> Path:
+    if provider_id == "dry_run":
+        return Path("outputs/dry-run")
+    return Path("outputs") / provider_id

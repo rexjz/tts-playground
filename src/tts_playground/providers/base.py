@@ -2,7 +2,19 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Protocol
+from typing import Any, Protocol
+
+
+class ProviderError(RuntimeError):
+    """Base error for provider configuration or runtime failures."""
+
+
+class ProviderConfigError(ProviderError):
+    """Raised when a provider is missing required local configuration."""
+
+
+class ProviderRuntimeError(ProviderError):
+    """Raised when a provider request fails after configuration is valid."""
 
 
 @dataclass(frozen=True)
@@ -11,6 +23,7 @@ class SynthesisRequest:
     language: str
     script_id: str
     turn_index: int
+    speaker_slot: str
     speaker_name: str
     text: str
     tts_instructions: str
@@ -27,10 +40,12 @@ class SynthesisResult:
     status: str
     output_path: str
     audio_path: str | None = None
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 class Provider(Protocol):
     id: str
+    audio_file_extension: str
 
     def synthesize(
         self,
